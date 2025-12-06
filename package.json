@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "cypress": "^15.7.1"
+    "cypress": "^15.7.1",
+    "xlsx": "^0.18.5"
   }
 }
