@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuração
-const MAX_PARALELO = 3;  // 3 browsers simultâneos
+const MAX_PARALELO = 4;  // 3 browsers simultâneos
 const HEADED = true;     // true = com janela (necessário para sicredi.com.br)
 const DIRETORIO = path.join(__dirname, 'paralelo');
 

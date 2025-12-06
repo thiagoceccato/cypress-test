@@ -47,20 +47,20 @@ describe('Auditoria: ' + FLUXO, () => {
       onBeforeLoad: setupWindowMonitoring,
     });
 
-    cy.wait(3000);
+    cy.wait(2000); // Reduzido de 3000
 
     // Aceitar cookies
     aceitarCookies();
-    cy.wait(1000);
+    cy.wait(500); // Reduzido de 1000
 
     // Scroll rápido
-    cy.scrollTo('bottom', { duration: 800 });
-    cy.wait(500);
-    cy.scrollTo('top', { duration: 500 });
-    cy.wait(500);
+    cy.scrollTo('bottom', { duration: 500 }); // Reduzido de 800
+    cy.wait(300); // Reduzido de 500
+    cy.scrollTo('top', { duration: 300 }); // Reduzido de 500
+    cy.wait(300); // Reduzido de 500
 
-    // Processa elementos - LIMITADO para 30 (mais rápido)
-    processarElementos(0, 30);
+    // Processa elementos - AUMENTADO para 40 (aproveita melhor cada visita)
+    processarElementos(0, 40);
   });
 
   function processarElementos(index, max) {
@@ -129,7 +129,7 @@ describe('Auditoria: ' + FLUXO, () => {
 
       // Scroll
       cy.wrap($el).scrollIntoView({ offset: { top: -100, left: 0 } });
-      cy.wait(150);
+      cy.wait(80); // Reduzido de 150
 
       // Guarda requests antes
       const reqsBefore = networkRequests.length;
@@ -140,8 +140,8 @@ describe('Auditoria: ' + FLUXO, () => {
       // CLICA
       cy.wrap($el).click({ force: true });
 
-      // ESPERA 1200ms (otimizado)
-      cy.wait(1200).then(() => {
+      // ESPERA 600ms (agressivo - pode perder alguns eventos lentos)
+      cy.wait(600).then(() => {
         const newReqs = networkRequests.slice(reqsBefore);
         
         // Procura evento com ep.acao OU clicks_gtag
@@ -161,9 +161,9 @@ describe('Auditoria: ' + FLUXO, () => {
       cy.url().then((url) => {
         if (!url.includes(URL_PAGE.split('/').pop())) {
           cy.go('back');
-          cy.wait(1000);
+          cy.wait(600); // Reduzido de 1000
           aceitarCookies();
-          cy.wait(300);
+          cy.wait(200); // Reduzido de 300
         }
         processarElementos(index + 1, max);
       });
