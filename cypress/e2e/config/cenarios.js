@@ -1,127 +1,509 @@
 // cypress/e2e/config/cenarios.js
-// Lista COMPLETA de cenários para auditoria
+// Apenas exporta a lista de cenários para o teste principal
 
 const CENARIOS = [
-  { nome: 'seja-associado', url: 'https://www.sicredi.com.br/site/seja-associado' },
-  { nome: 'cartoes', url: 'https://www.sicredi.com.br/site/cartoes' },
-  { nome: 'cartoes-empresarial', url: 'https://www.sicredi.com.br/site/cartoes/cartao-empresarial' },
-  { nome: 'cartoes-para-voce', url: 'https://www.sicredi.com.br/site/cartoes/cartao-para-voce' },
-  { nome: 'cartoes-debito', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-debito' },
-  { nome: 'cartoes-gold', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-gold' },
-  { nome: 'cartoes-internacional', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-internacional' },
-  { nome: 'cartoes-black', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-mastercard-black' },
-  { nome: 'cartoes-platinum', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-platinum' },
-  { nome: 'cartoes-platinum-mc', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-platinum-mastercard' },
-  { nome: 'cartoes-platinum-visa', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-platinum-visa' },
-  { nome: 'cartoes-poupanca', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-poupanca' },
-  { nome: 'cartoes-infinite', url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-visa-infinite' },
-  { nome: 'cartoes-platinum-visa2', url: 'https://www.sicredi.com.br/site/cartoes/platinum-visa' },
-  { nome: 'cartoes-portfolio-mc', url: 'https://www.sicredi.com.br/site/cartoes/portfolio-mastercard' },
-  { nome: 'cartoes-portfolio-visa', url: 'https://www.sicredi.com.br/site/cartoes/portfolio-visa' },
-  { nome: 'cartoes-recompensa', url: 'https://www.sicredi.com.br/site/cartoes/programa-de-recompensa' },
-  { nome: 'maquininha', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes' },
-  { nome: 'maquininha-clover', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/clover' },
-  { nome: 'maquininha-clover-flex', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/clover-flex' },
-  { nome: 'maquininha-clover-mini', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/clover-mini' },
-  { nome: 'maquininha-ecommerce', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/e-commerce' },
-  { nome: 'maquininha-link', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/link-pagamento' },
-  { nome: 'maquininha-com-fio', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/maquina-com-fio' },
-  { nome: 'maquininha-sem-fio', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/maquina-sem-fio' },
-  { nome: 'maquininha-tap', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/tap-sicredi' },
-  { nome: 'maquininha-tef', url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/tef' },
-  { nome: 'consorcio-simulador', url: 'https://www.sicredi.com.br/site/consorcio/simulador' },
-  { nome: 'consorcio', url: 'https://www.sicredi.com.br/site/consorcios' },
-  { nome: 'consorcio-agro', url: 'https://www.sicredi.com.br/site/consorcios-para-agronegocio' },
-  { nome: 'consorcio-agro2', url: 'https://www.sicredi.com.br/site/consorcios-para-o-agronegocio' },
-  { nome: 'consorcio-auto', url: 'https://www.sicredi.com.br/site/consorcios/automoveis' },
-  { nome: 'consorcio-caminhoes', url: 'https://www.sicredi.com.br/site/consorcios/caminhoes-tratores-e-utilitarios' },
-  { nome: 'consorcio-drones', url: 'https://www.sicredi.com.br/site/consorcios/drones' },
-  { nome: 'consorcio-imoveis', url: 'https://www.sicredi.com.br/site/consorcios/imoveis' },
-  { nome: 'consorcio-maquinas', url: 'https://www.sicredi.com.br/site/consorcios/maquinas-e-equipamentos' },
-  { nome: 'consorcio-industriais', url: 'https://www.sicredi.com.br/site/consorcios/maquinas-equipamentos-industriais' },
-  { nome: 'consorcio-motos', url: 'https://www.sicredi.com.br/site/consorcios/motocicletas' },
-  { nome: 'consorcio-moveis', url: 'https://www.sicredi.com.br/site/consorcios/moveis-planejados' },
-  { nome: 'consorcio-nautico', url: 'https://www.sicredi.com.br/site/consorcios/nautico' },
-  { nome: 'consorcio-servicos', url: 'https://www.sicredi.com.br/site/consorcios/servicos' },
-  { nome: 'consorcio-sustentavel', url: 'https://www.sicredi.com.br/site/consorcios/sustentavel' },
-  { nome: 'invest-carteira', url: 'https://www.sicredi.com.br/site/investimentos/carteira-personalizada' },
-  { nome: 'invest-fundos', url: 'https://www.sicredi.com.br/site/investimentos/fundos-investimentos' },
-  { nome: 'invest-poupanca', url: 'https://www.sicredi.com.br/site/investimentos/poupanca' },
-  { nome: 'invest-renda-fixa', url: 'https://www.sicredi.com.br/site/investimentos/renda-fixa' },
-  { nome: 'invest-renda-var', url: 'https://www.sicredi.com.br/site/investimentos/renda-variavel' },
-  { nome: 'investimentos', url: 'https://www.sicredi.com.br/site/investimentos' },
-  { nome: 'previdencia', url: 'https://www.sicredi.com.br/site/previdencia' },
-  { nome: 'previdencia-empresarial', url: 'https://www.sicredi.com.br/site/previdencia/empresarial' },
-  { nome: 'previdencia-individual', url: 'https://www.sicredi.com.br/site/previdencia/individual' },
-  { nome: 'seguros', url: 'https://www.sicredi.com.br/site/seguros' },
-  { nome: 'seguros-agro', url: 'https://www.sicredi.com.br/site/seguros/para-agronegocio' },
-  { nome: 'seguros-proagro', url: 'https://www.sicredi.com.br/site/seguros/para-agronegocio/proagro' },
-  { nome: 'seguros-patrimonio-rural', url: 'https://www.sicredi.com.br/site/seguros/para-agronegocio/seguro-patrimonio-rural' },
-  { nome: 'seguros-empresa', url: 'https://www.sicredi.com.br/site/seguros/para-empresa' },
-  { nome: 'seguros-acidentes', url: 'https://www.sicredi.com.br/site/seguros/para-empresa/acidentes-pessoais-coletivos' },
-  { nome: 'seguros-condominio', url: 'https://www.sicredi.com.br/site/seguros/para-empresa/condominio' },
-  { nome: 'seguros-empresarial', url: 'https://www.sicredi.com.br/site/seguros/para-empresa/empresarial' },
-  { nome: 'seguros-vida-grupo', url: 'https://www.sicredi.com.br/site/seguros/para-empresa/vida-em-grupo' },
-  { nome: 'seguros-voce', url: 'https://www.sicredi.com.br/site/seguros/para-voce' },
-  { nome: 'seguros-auto', url: 'https://www.sicredi.com.br/site/seguros/para-voce/auto' },
-  { nome: 'seguros-residencial', url: 'https://www.sicredi.com.br/site/seguros/para-voce/residencial' },
-  { nome: 'seguros-vida', url: 'https://www.sicredi.com.br/site/seguros/para-voce/seguro-vida' },
-  { nome: 'seguros-viagem', url: 'https://www.sicredi.com.br/site/seguros/para-voce/viagem' },
-  { nome: 'credito-agro', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio' },
-  { nome: 'credito-comercializacao', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao' },
-  { nome: 'credito-comercializacao2', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/comercializacao' },
-  { nome: 'credito-fgpp', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/fgpp' },
-  { nome: 'credito-funcafe-adiant', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-adiantamento' },
-  { nome: 'credito-funcafe-giro', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-capital-de-giro' },
-  { nome: 'credito-funcafe-comerci', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-comercializacao' },
-  { nome: 'credito-funcafe-fac', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-fac' },
-  { nome: 'credito-cpr', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr' },
-  { nome: 'credito-cpr-insumos', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-aquisicao-de-insumos' },
-  { nome: 'credito-cpr-bndes', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-bndes' },
-  { nome: 'credito-cpr-solar', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-energia-solar' },
-  { nome: 'credito-cpr-facil', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-facil' },
-  { nome: 'credito-cpr-pj', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-pj' },
-  { nome: 'credito-cpr-tradicional', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-tradicional' },
-  { nome: 'credito-custeio', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio' },
-  { nome: 'credito-custeio-insumos', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/aquisicao-insumos-fornecimento-cooperados' },
-  { nome: 'credito-custeio-bndes', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/bndes' },
-  { nome: 'credito-custeio-agro', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/custeio-agropecuario' },
-  { nome: 'credito-custeio-pecuario', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/custeio-pecuario-integradoras' },
-  { nome: 'credito-custeio-fco', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/fco' },
-  { nome: 'credito-custeio-fno', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/fno' },
-  { nome: 'credito-custeio-pronaf', url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/pronaf' },
-  { nome: 'pix-automatico', url: 'https://www.sicredi.com.br/site/pix/pix-automatico' },
-  { nome: 'pix-pj', url: 'https://www.sicredi.com.br/site/pixpj' },
-  { nome: 'pix-pj-automatico', url: 'https://www.sicredi.com.br/site/pixpj/pix-automatico' },
-  { nome: 'pix', url: 'https://www.sicredi.com.br/site/pix' },
-  { nome: 'solucoes-condominios', url: 'https://www.sicredi.com.br/site/solucoes-para-condominios' },
-  { nome: 'solucoes-pj', url: 'https://www.sicredi.com.br/site/solucoes-pj' },
-  { nome: 'solucoes-rh', url: 'https://www.sicredi.com.br/site/solucoes-rh' },
-  { nome: 'cobranca', url: 'https://www.sicredi.com.br/site/recebimentos-para-empresa/cobranca' },
-  { nome: 'mei', url: 'https://www.sicredi.com.br/site/mei' },
-  { nome: 'conta-corrente', url: 'https://www.sicredi.com.br/site/conta-corrente' },
-  { nome: 'portabilidade-salario', url: 'https://www.sicredi.com.br/site/conta-corrente/portabilidade-salario' },
-  { nome: 'pagamentos-empresa', url: 'https://www.sicredi.com.br/site/pagamentos/para-empresa' },
-  { nome: 'pagamentos-voce', url: 'https://www.sicredi.com.br/site/pagamentos/para-voce' },
-  { nome: 'tag-passagem', url: 'https://www.sicredi.com.br/site/pagamentos/para-voce/tag-passagem' },
-  { nome: 'home', url: 'https://www.sicredi.com.br/home' },
-  { nome: 'indicacao', url: 'https://www.sicredi.com.br/site/indicacao' },
-  { nome: 'mgm', url: 'https://www.sicredi.com.br/site/mgm' },
-  { nome: 'cambio', url: 'https://www.sicredi.com.br/site/cambio-e-comercio-exterior' },
-  { nome: 'cambio-empresas', url: 'https://www.sicredi.com.br/site/cambio-e-comercio-exterior/empresas' },
-  { nome: 'realize-sonhos', url: 'https://www.sicredi.com.br/site/realize-seus-sonhos' },
-  { nome: 'safra', url: 'https://www.sicredi.com.br/site/safra' },
-  { nome: 'somos-do-sul', url: 'https://www.sicredi.com.br/site/somos-do-sul' },
-  { nome: 'expointer', url: 'https://www.sicredi.com.br/site/somos-do-sul-expointer' },
-  { nome: 'todos-produtos', url: 'https://www.sicredi.com.br/site/todos-produtos' },
-  { nome: 'produtos-agro', url: 'https://www.sicredi.com.br/site/todos-produtos/para-agronegocio' },
-  { nome: 'produtos-empresa', url: 'https://www.sicredi.com.br/site/todos-produtos/para-empresa' },
-  { nome: 'empreendedorismo-fem', url: 'https://www.sicredi.com.br/site/empreendedorismo-feminino' },
-  { nome: 'energia-solar', url: 'https://www.sicredi.com.br/site/energia-solar' },
-  { nome: 'explica-ai', url: 'https://www.sicredi.com.br/site/explica-ai' },
-  { nome: 'open-finance', url: 'https://www.sicredi.com.br/site/open-finance' },
-  { nome: 'sobre-nos', url: 'https://www.sicredi.com.br/site/sobre-nos' },
-  { nome: 'cooperativismo', url: 'https://www.sicredi.com.br/site/sobre-nos/cooperativismo' },
+  {
+    nome: 'seja-associado',
+    url: 'https://www.sicredi.com.br/site/seja-associado',
+  },
+
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-empresarial',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-para-voce',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-debito',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-gold',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-internacional',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-mastercard-black',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-platinum',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-platinum-mastercard',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-platinum-visa',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-poupanca',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/cartao-sicredi-visa-infinite',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/platinum-visa',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/portfolio-mastercard',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/portfolio-visa',
+  },
+  {
+    nome: 'cartoes',
+    url: 'https://www.sicredi.com.br/site/cartoes/programa-de-recompensa',
+  },
+
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/clover',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/clover-flex',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/clover-mini',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/e-commerce',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/link-pagamento',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/maquina-com-fio',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/maquina-sem-fio',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/tap-sicredi',
+  },
+  {
+    nome: 'maquinha-de-cartoes',
+    url: 'https://www.sicredi.com.br/site/maquina-de-cartoes/tef',
+  },
+
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcio/simulador',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios-para-agronegocio',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios-para-o-agronegocio',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/automoveis',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/caminhoes-tratores-e-utilitarios',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/drones',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/imoveis',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/maquinas-e-equipamentos',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/maquinas-equipamentos-industriais',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/motocicletas',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/moveis-planejados',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/nautico',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/servicos',
+  },
+  {
+    nome: 'consorcio',
+    url: 'https://www.sicredi.com.br/site/consorcios/sustentavel',
+  },
+
+  {
+    nome: 'investimentos',
+    url: 'https://www.sicredi.com.br/site/investimentos/carteira-personalizada',
+  },
+  {
+    nome: 'investimentos',
+    url: 'https://www.sicredi.com.br/site/investimentos/fundos-investimentos',
+  },
+  {
+    nome: 'investimentos',
+    url: 'https://www.sicredi.com.br/site/investimentos/poupanca',
+  },
+  {
+    nome: 'investimentos',
+    url: 'https://www.sicredi.com.br/site/investimentos/renda-fixa',
+  },
+  {
+    nome: 'investimentos',
+    url: 'https://www.sicredi.com.br/site/investimentos/renda-variavel',
+  },
+  {
+    nome: 'investimentos',
+    url: 'https://www.sicredi.com.br/site/investimentos',
+  },
+
+  {
+    nome: 'previdencia',
+    url: 'https://www.sicredi.com.br/site/previdencia',
+  },
+  {
+    nome: 'previdencia',
+    url: 'https://www.sicredi.com.br/site/previdencia/empresarial',
+  },
+  {
+    nome: 'previdencia',
+    url: 'https://www.sicredi.com.br/site/previdencia/individual',
+  },
+
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-agronegocio',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-agronegocio/proagro',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-agronegocio/seguro-patrimonio-rural',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-empresa',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-empresa/acidentes-pessoais-coletivos',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-empresa/condominio',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-empresa/empresarial',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-empresa/vida-em-grupo',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-voce',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-voce/auto',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-voce/residencial',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-voce/seguro-vida',
+  },
+  {
+    nome: 'seguros',
+    url: 'https://www.sicredi.com.br/site/seguros/para-voce/viagem',
+  },
+
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/comercializacao',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/fgpp',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-adiantamento',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-capital-de-giro',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-comercializacao',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/comercializacao/funcafe-fac',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-aquisicao-de-insumos',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-bndes',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-energia-solar',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-facil',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-pj',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/cpr/cpr-tradicional',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/aquisicao-insumos-fornecimento-cooperados',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/bndes',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/custeio-agropecuario',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/custeio-pecuario-integradoras',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/fco',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/fno',
+  },
+  {
+    nome: 'credito',
+    url: 'https://www.sicredi.com.br/site/credito/para-agronegocio/custeio/pronaf',
+  },
+
+  {
+    nome: 'pix',
+    url: 'https://www.sicredi.com.br/site/pix/pix-automatico',
+  },
+  {
+    nome: 'pix',
+    url: 'https://www.sicredi.com.br/site/pixpj',
+  },
+  {
+    nome: 'pix',
+    url: 'https://www.sicredi.com.br/site/pixpj/pix-automatico',
+  },
+  {
+    nome: 'pix',
+    url: 'https://www.sicredi.com.br/site/pix',
+  },
+
+  {
+    nome: 'solucoes-pj',
+    url: 'https://www.sicredi.com.br/site/solucoes-para-condominios',
+  },
+  {
+    nome: 'solucoes-pj',
+    url: 'https://www.sicredi.com.br/site/solucoes-pj',
+  },
+  {
+    nome: 'solucoes-pj',
+    url: 'https://www.sicredi.com.br/site/solucoes-rh',
+  },
+  {
+    nome: 'solucoes-pj',
+    url: 'https://www.sicredi.com.br/site/recebimentos-para-empresa/cobranca',
+  },
+
+  {
+    nome: 'mei',
+    url: 'https://www.sicredi.com.br/site/mei',
+  },
+
+  {
+    nome: 'conta-corrente',
+    url: 'https://www.sicredi.com.br/site/conta-corrente',
+  },
+  {
+    nome: 'conta-corrente',
+    url: 'https://www.sicredi.com.br/site/conta-corrente/portabilidade-salario',
+  },
+
+  {
+    nome: 'pagamentos',
+    url: 'https://www.sicredi.com.br/site/pagamentos/para-empresa',
+  },
+  {
+    nome: 'pagamentos',
+    url: 'https://www.sicredi.com.br/site/pagamentos/para-voce',
+  },
+  {
+    nome: 'pagamentos',
+    url: 'https://www.sicredi.com.br/site/pagamentos/para-voce/tag-passagem',
+  },
+
+  {
+    nome: 'home',
+    url: 'https://www.sicredi.com.br/home',
+  },
+
+  {
+    nome: 'indicacao-mgm',
+    url: 'https://www.sicredi.com.br/site/indicacao',
+  },
+  {
+    nome: 'indicacao-mgm',
+    url: 'https://www.sicredi.com.br/site/mgm',
+  },
+
+  {
+    nome: 'cambio-e-exterior',
+    url: 'https://www.sicredi.com.br/site/cambio-e-comercio-exterior',
+  },
+  {
+    nome: 'cambio-e-exterior',
+    url: 'https://www.sicredi.com.br/site/cambio-e-comercio-exterior/empresas',
+  },
+
+  {
+    nome: 'campanhas-institucionais',
+    url: 'https://www.sicredi.com.br/site/realize-seus-sonhos',
+  },
+  {
+    nome: 'campanhas-institucionais',
+    url: 'https://www.sicredi.com.br/site/safra',
+  },
+  {
+    nome: 'campanhas-institucionais',
+    url: 'https://www.sicredi.com.br/site/somos-do-sul',
+  },
+  {
+    nome: 'campanhas-institucionais',
+    url: 'https://www.sicredi.com.br/site/somos-do-sul-expointer',
+  },
+
+  {
+    nome: 'catalogo-de-produtos',
+    url: 'https://www.sicredi.com.br/site/todos-produtos',
+  },
+  {
+    nome: 'catalogo-de-produtos',
+    url: 'https://www.sicredi.com.br/site/todos-produtos/para-agronegocio',
+  },
+  {
+    nome: 'catalogo-de-produtos',
+    url: 'https://www.sicredi.com.br/site/todos-produtos/para-empresa',
+  },
+
+  {
+    nome: 'programas-e-iniciativa',
+    url: 'https://www.sicredi.com.br/site/empreendedorismo-feminino',
+  },
+
+  {
+    nome: 'energia-solar',
+    url: 'https://www.sicredi.com.br/site/energia-solar',
+  },
+
+  {
+    nome: 'conteudo-educacao',
+    url: 'https://www.sicredi.com.br/site/explica-ai',
+  },
+
+  {
+    nome: 'open-finance',
+    url: 'https://www.sicredi.com.br/site/open-finance',
+  },
+
+  {
+    nome: 'institucional',
+    url: 'https://www.sicredi.com.br/site/sobre-nos',
+  },
+  {
+    nome: 'institucional',
+    url: 'https://www.sicredi.com.br/site/sobre-nos/cooperativismo',
+  },
 ];
 
 module.exports = { CENARIOS };
